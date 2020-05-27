@@ -120,3 +120,96 @@ body {
     font-size: 14px;
     padding: 0 10px;
 }
+
+
+/* categories */
+.menu {
+    padding-bottom: 30px;
+}
+.asideNav {
+    float: left;
+    width: 200px;
+    height: 500px;
+    box-shadow: 2px 6px 9px rgba(0, 0, 0, .2);
+}
+.listItem .itemHref {
+    display: block;
+    margin: 0 20px;
+    height: 50px;
+    line-height: 50px;
+    color: #333;
+    border-bottom: 1px dotted #ddd;
+    box-sizing: border-box;
+}
+.listItem:last-child .itemHref {
+    border: none;
+}
+.navList {
+    position: relative;
+}
+
+.listItem:hover,
+.listItem:hover .itemHref {
+    background: #e63625;
+    color: #fff;
+}
+
+/* sub-categories */
+.navList .itemMenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 900px;
+    min-height: 500px;
+    background-color: #fff;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, .2);
+    z-index: 999;
+}
+.listItem:hover .itemMenu {
+    display: block;
+}
+.subCate {
+    float: left;
+    width: 610px;
+    padding: 30px 20px 20px 20px;
+}
+
+.subCate .subCateItem {
+    position: relative;
+    padding-left: 80px;
+}
+
+.subCate .subCateItem .subCateTitle {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 70px;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+.subCateTitle .subCateTitleArrow {
+    margin-left: 5px;
+}
+
+.subCate .subCateContent {
+    padding: 5px 0;
+}
+
+.subCate .subCateContent .subCateContentLink {
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    border-left: 1px solid #ddd;
+    padding: 0 10px;
+    margin: 3px 0;
+}
+
+.subCate .subCateLink:hover,
+.subCate .subCateContent .subCateContentLink:hover {
+    color: #e63625;
+}
