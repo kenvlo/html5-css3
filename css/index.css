@@ -212,3 +212,44 @@ body {
 .subCate .subCateContent .subCateContentLink:hover {
   color: #e63625;
 }
+
+/* guessLike in sub-categories */
+.guessLike {
+  float: left;
+  width: 250px;
+  padding-top: 30px;
+}
+.guessLike h3 {
+  color: #666;
+  text-align: center;
+}
+.likeItem {
+  float: left;
+}
+.likeItem .likeLink {
+  display: block;
+  width: 100px;
+  padding: 10px 0 0 15px;
+}
+.likeItem .likeLink img {
+  width: 100px;
+  height: 100px;
+}
+
+.likeItem:hover img {
+  opacity: .8;
+  filter: alpha(opacity=80);
+}
+
+.likeItem .likeLink p {
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #666;
+}
+.likeLink:hover p {
+  color: #e63625;
+}
