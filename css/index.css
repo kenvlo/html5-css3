@@ -271,7 +271,7 @@ body {
 }
 
 .bannerWrap .banner ul li {
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 .bannerWrap .banner ul li a {
@@ -302,4 +302,26 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   transform: translateY(-50%);
   cursor: center;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+.indicators .indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.indicators .on {
+  background-color: #ff5000;
 }

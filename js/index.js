@@ -20,6 +20,7 @@ window.onload = function () {
     var swiperItem = swiper.getElementsByClassName("swiperItem");
     var prev = document.getElementsByClassName("prev")[0];
     var next = document.getElementsByClassName("next")[0];
+    var indicators = document.getElementsByClassName("indicator");
     var index = 0;
     var timer = null;
 
@@ -33,12 +34,23 @@ window.onload = function () {
         "translateX(" + -i * swiperItem[0].offsetWidth + "px)";
     }
 
+    for (var k = 0; k < indicators.length; k++) {
+      indicators[k].onclick = function () {
+        clearInterval(timer);
+        var clickIndex = parseInt(this.getAttribute("data-index"));
+        index = clickIndex;
+        changeImg();
+      }
+    }
+
     prev.onclick = function () {
+      clearInterval(timer);
       index--;
       changeImg();
     };
 
     next.onclick = function () {
+      clearInterval(timer);
       index++;
       changeImg();
     };
@@ -69,6 +81,14 @@ window.onload = function () {
         swiperItem[j].style.opacity = 0;
       }
       swiperItem[index].style.opacity = 1;
+      setIndicatorOn();
+    }
+
+    function setIndicatorOn() {
+      for (var i = 0; i < indicators.length; i++) {
+        indicators[i].classList.remove("on");
+      }
+      indicators[index].classList.add("on");
     }
 
     autoChange();
