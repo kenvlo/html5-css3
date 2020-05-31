@@ -21,6 +21,7 @@ window.onload = function () {
     var prev = document.getElementsByClassName("prev")[0];
     var next = document.getElementsByClassName("next")[0];
     var index = 0;
+    var timer = null;
 
     for (var i = 0; i < swiperItem.length; i++) {
       if (index == i) {
@@ -29,7 +30,7 @@ window.onload = function () {
         swiperItem[i].style.opacity = 0;
       }
       swiperItem[i].style.transform =
-        "translateX(" + (-i * swiperItem[0].offsetWidth) + "px)";
+        "translateX(" + -i * swiperItem[0].offsetWidth + "px)";
     }
 
     prev.onclick = function () {
@@ -42,11 +43,40 @@ window.onload = function () {
       changeImg();
     };
 
+    swiper.addEventListener(
+      "mouseover",
+      function () {
+        clearInterval(timer);
+      },
+      false
+    );
+
+    swiper.addEventListener(
+      "mouseout",
+      function () {
+        autoChange();
+      },
+      false
+    );
+
     function changeImg() {
+      if (index < 0) {
+        index = swiperItem.length - 1;
+      } else if (index > swiperItem.length - 1) {
+        index = 0;
+      }
       for (var j = 0; j < swiperItem.length; j++) {
         swiperItem[j].style.opacity = 0;
       }
       swiperItem[index].style.opacity = 1;
+    }
+
+    autoChange();
+    function autoChange() {
+      timer = setInterval(function () {
+        index++;
+        changeImg();
+      }, 3000);
     }
   }
 };

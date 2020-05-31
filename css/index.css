@@ -270,6 +270,10 @@ body {
   width: 100%;
 }
 
+.bannerWrap .banner ul li {
+  transition: opacity .3s;
+}
+
 .bannerWrap .banner ul li a {
   display: block;
   width: 970px;
